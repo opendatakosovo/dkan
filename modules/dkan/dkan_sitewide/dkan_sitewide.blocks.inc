@@ -77,19 +77,9 @@ function dkan_sitewide_block_view($delta = '') {
       $block['content'] = dkan_sitewide_resource_additional_block();
       break;
 
-    case 'dkan_sitewide_search_bar':
-      $block['subject'] = '';
-      $block['content'] = dkan_sitewide_search_bar();
-      break;
-
     case 'dkan_sitewide_other_access':
       $block['subject'] = t('Other Access');
       $block['content'] = dkan_sitewide_other_access();
-      break;
-
-    case 'dkan_sitewide_user_menu':
-      $block['subject'] = '';
-      $block['content'] = dkan_sitewide_user_menu_block();
       break;
 
   }
@@ -203,8 +193,9 @@ function dkan_sitewide_license_block() {
  * Adds Powered by.
  */
 function dkan_sitewide_footer_author() {
-  return t("powered by !dkan, a project of !nuams", array("!dkan" => l('DKAN', 'http://nucivic.com/dkan'), '!nuams' => l('nüams', 'http://nuams.com')));
+  return t("Made in Kosovo by !aio for !odk", array("!aio" => l('Assemblio LLC', 'http://assemblio.com'), '!odk' => l('Open Data Kosovo', 'http://opendatakosovo.org')));
 }
+
 
 /**
  * Adds social links.

@@ -11,7 +11,7 @@ include_once 'dkan_sitewide_demo_front.features.inc';
  */
 function dkan_sitewide_demo_front_block_info() {
   $blocks['dkan_demo_front'] = array(
-    'info' => t('Welcome to the DKAN Demo'),
+    'info' => t('Welcome to Open Data Kosovo Data Catalog'),
     'cache' => DRUPAL_NO_CACHE,
   );
   $blocks['dkan_search_front'] = array(
@@ -34,7 +34,7 @@ function dkan_sitewide_demo_front_block_view($delta = '') {
 
   switch ($delta) {
     case 'dkan_demo_front':
-      $block['subject'] = t('Welcome to the DKAN Demo');
+      $block['subject'] = t('Welcome to Open Data Kosovo Data Catalog');
       $block['content'] = dkan_demo_front_block();
       break;
 
@@ -60,12 +60,8 @@ function dkan_demo_front_block() {
   $homepage_dataset_url = url('dataset/gold-prices-london-1950-2008-monthly');
   $content = '<div class="module-content">
     <header>
-      <p>Try out standard DKAN functionality in a sandbox environment. Search for datasets directly from the homepage or by navigating to the <a href="' . url('dataset') . '">Datasets</a> search page where you can facet by tags, groups and format.</p>
+     <p>Welcome to Open Data Kosovo\'s data catalog.<br><br>Explore data collected by the various organizations listed in the <a href="' . url('groups') . '">Groups</a> page.</p>
     </header>
-    <section class="featured media-overlay">
-      <h2 class="media-heading">DKAN‘s data previewing tool has many powerful features</h2>
-      <a class="image" href=" ' . $homepage_dataset_url . ' "><img src="' . $homepage_graphic . '" style="width: 100%"></a>
-    </section>
   </div>';
   return $content;
 }
@@ -82,10 +78,11 @@ function dkan_search_front_block() {
  */
 function dkan_add_front_block() {
   $output = '<div class="add content">';
-  $output .= t('You can add a !dataset to get a sense of publisher workflow. This form can be customised to require many additional fields. In this demo only the most basic fields are required.', array('!dataset' => l(t('Dataset'), 'node/add/dataset')));
+  $output .= 'Use the search field to find data or navigate to the <a href="' . url('dataset') . '">Datasets</a> page to explore Kosovo\'s open data.';
   $output .= '</div><a class="close icon-remove-sign" href="#close"></a>';
   return $output;
 }
+
 
 /**
  * Implements hook_views_post_execute().
